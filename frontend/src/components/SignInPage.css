@@ -1,0 +1,112 @@
+.signin-page-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    font-family: Arial, sans-serif;
+}
+
+.signin-form-wrapper {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 50px 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signin-form-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.signin-form-wrapper h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.signin-form input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    box-sizing: border-box;
+    text-align: left; 
+    transition: all 0.25s ease-in-out;
+}
+
+.signin-form input:focus {
+    border-color: #6e8efb;
+    box-shadow: 0 0 8px rgba(110, 142, 251, 0.5);
+}
+
+.signin-form input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #6e8efb;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signin-form input[type="submit"]:hover {
+    background-color: #5a73e0;
+    transform: translateY(-2px);
+}
+
+.signin-form-wrapper p {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #555;
+}
+
+.signin-form-wrapper p a {
+    color: #6e8efb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signin-form-wrapper p a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 500px) {
+    .signin-form-wrapper {
+        padding: 30px 20px;
+        width: 95%;
+    }
+
+    .signin-form-wrapper h1 {
+        font-size: 24px;
+    }
+
+    .signin-form input {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    .signin-form input[type="submit"] {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .signin-form-wrapper p {
+        font-size: 13px;
+    }
+}

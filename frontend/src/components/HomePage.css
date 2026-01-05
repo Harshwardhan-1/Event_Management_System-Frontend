@@ -1,0 +1,37 @@
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 97vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    box-sizing: border-box;
+}
+
+.homepage-container h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.homepage-container p {
+    font-size: 20px;
+    margin: 6px 0;
+    color: #f0f0f0;
+    word-break: break-word; 
+}
+
+
+@media (max-width: 500px) {
+    .homepage-container h1 {
+        font-size: 24px;
+    }
+
+    .homepage-container p {
+        font-size: 16px;
+    }
+}

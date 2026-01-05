@@ -1,0 +1,110 @@
+.signup-page-container {
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 20px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    font-family: 'Arial', sans-serif;
+}
+
+.signup-form-wrapper {
+    width: 100%;
+    max-width: 450px;
+    background-color: #fff;
+    padding: 50px 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; 
+}
+
+.signup-form-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.signup-form-wrapper h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+
+.signup-form input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.25s ease-in-out;
+    box-sizing: border-box; 
+}
+.signup-form input:focus {
+    border-color: #6e8efb;
+    box-shadow: 0 0 8px rgba(110, 142, 251, 0.5);
+}
+
+.signup-form input[type="submit"] {
+    background-color: #6e8efb;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 17px;
+      box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signup-form input[type="submit"]:hover {
+    background-color: #5a73e0;
+    transform: translateY(-2px);
+}
+
+.signup-form-wrapper p {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #555;
+}
+
+.signup-form-wrapper p a {
+    color: #6e8efb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-form-wrapper p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+    .signup-form-wrapper {
+        padding: 30px 15px;
+        width: 95%;
+    }
+
+    .signup-form-wrapper h2 {
+        font-size: 24px;
+    }
+
+    .signup-form input {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    .signup-form input[type="submit"] {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .signup-form-wrapper p {
+        font-size: 13px;
+    }
+}
