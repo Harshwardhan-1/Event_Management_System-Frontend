@@ -12,16 +12,23 @@ export default function SignInPage({setUserData}){
         const send={gmail,password};
         try{
         const response=await axios.post("https://event-managaement-system-backend.onrender.com/api/all/getSignIn",send,{withCredentials:true});
-        if(response.data.message==="Login Successfully"){
-            setUserData(response.data.data);
-            navigate('/HomePage');
-        }
+           const user=response.data.data;
+            setUserData(user);
+            if(user.role=== "Student"){
+                navigate('/HomePage');
+            }else if(user.role=== 'Teacher'){
+                navigate('/TeacherPage');
+            }else if(user.role=== 'Admin'){
+                navigate('/AdminPage');
+            }
     }catch(err){
         if(err.response?.data?.message==="Something went Wrong"){
             alert('please do signUp first');
             navigate('/');
         }else if(err.response?.data?.message==="Something went wrong"){
             alert('enter correct password');
+        }else if(err.response?.data?.message==="Role Undefined"){
+            alert('please defined your role');
         }
     }
 }
@@ -31,8 +38,8 @@ export default function SignInPage({setUserData}){
             <div className="signin-form-wrapper">
          <h1>Welcome to Login Page</h1>
          <form onSubmit={handle} className="signin-form">
-            <input type="email" placeholder="Enter your gmail here"  onChange={(e)=>setGmail(e.target.value)} />
-            <input type="password" placeholder='Enter your password here' onChange={(e)=>setPassword(e.target.value)} />
+     <input type="email" placeholder="Enter your gmail here"  onChange={(e)=>setGmail(e.target.value)} />
+     <input type="password" placeholder='Enter your password here' onChange={(e)=>setPassword(e.target.value)} />
             <input type="submit" />
          </form>
          <p>dont have an account go to <Link to='/' >SignUpPage</Link></p>
