@@ -7,7 +7,7 @@ export default function StudentProfilePage({newUserData}){
     useEffect(()=>{
         const fetch=async()=>{
             try{
-    const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/Student/CheckStudent',{withCredentials:true});
+    const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/Student/CheckProfileExist',{withCredentials:true});
     setProfileData(response.data.data);
             }catch(err){
                 console.log("profile not found",err);
@@ -19,6 +19,8 @@ export default function StudentProfilePage({newUserData}){
     return(
         <>
         <h1>Welcome to your profile </h1>
+        <p>{profileData.userId.name}</p>
+        <p>{profileData.userId.gmail}</p>
         <p>{profileData?.rollNo}</p>
         <p>{profileData?.section}</p>
         <p>{profileData?.semester}</p>
