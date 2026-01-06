@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
 import axios from 'axios';
+import './StudentProfilePage.css';
 export default function StudentProfilePage({newUserData}){
     const [profileData,setProfileData]=useState('');
 
@@ -18,13 +19,15 @@ export default function StudentProfilePage({newUserData}){
     console.log(newUserData?.rollNo);
     return(
         <>
+         <div className="student-profile">
         <h1>Welcome to your profile </h1>
-        <p>{profileData.userId?.name}</p>
-        <p>{profileData.userId?.gmail}</p>
-        <p>{profileData?.rollNo}</p>
-        <p>{profileData?.section}</p>
-        <p>{profileData?.semester}</p>
-        <p>{profileData?.branch}</p>
+        <p>Name:  {profileData.userId?.name}</p>
+        <p>Email: {profileData.userId?.gmail}</p>
+        <p>RollNo: {profileData?.rollNo}</p>
+        <p>Section: {profileData?.section}</p>
+        <p>Semester: {profileData?.semester}</p>
+        <p>Branch: {profileData?.branch}</p>
+        </div>
         </>
     );
 }

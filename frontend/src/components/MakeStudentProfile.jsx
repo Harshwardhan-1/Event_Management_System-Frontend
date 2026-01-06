@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import './MakeStudentProfile.css';
 export default function MakeStudentProfile({setNewUserData}){
     const [rollNo,setRollNo]=useState('');
     const [branch,setBranch]=useState('');
@@ -28,7 +29,8 @@ if(response.data.message=== 'Student data saved'){
     }
     return(
         <>
-        <form onSubmit={handleSubmit}>
+        <div className="make-student-page">
+        <form className="student-form" onSubmit={handleSubmit}>
 <input type="text" placeholder="Enter your rollNo here" name="rollNo" onChange={(e)=>setRollNo(e.target.value)} />
 <input type="text" placeholder="Enter your branch here" name="branch" onChange={(e)=>setBranch(e.target.value)} />
 <input type="text" placeholder="Enter your section here" name="section" onChange={(e)=>setSection(e.target.value)} />
@@ -36,6 +38,7 @@ if(response.data.message=== 'Student data saved'){
 <input type="number"  placeholder="Enter your phoneNo here" name="phone" onChange={(e)=>setPhone(e.target.value)}/>
 <input type="submit" />
        </form>
+       </div>
         </>
     );
 }
