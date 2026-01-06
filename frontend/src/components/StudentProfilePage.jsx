@@ -19,8 +19,8 @@ export default function StudentProfilePage({newUserData}){
     return(
         <>
         <h1>Welcome to your profile </h1>
-        <p>{profileData.userId.name}</p>
-        <p>{profileData.userId.gmail}</p>
+        <p>{profileData.userId?.name}</p>
+        <p>{profileData.userId?.gmail}</p>
         <p>{profileData?.rollNo}</p>
         <p>{profileData?.section}</p>
         <p>{profileData?.semester}</p>
