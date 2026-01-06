@@ -15,7 +15,7 @@ export default function StudentProfilePage({newUserData}){
         };
         fetch();
     },[])
-    console.log(newUserData.rollNo);
+    console.log(newUserData?.rollNo);
     return(
         <>
         <h1>Welcome to your profile </h1>
