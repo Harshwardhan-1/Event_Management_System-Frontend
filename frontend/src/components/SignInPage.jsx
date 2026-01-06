@@ -15,7 +15,16 @@ export default function SignInPage({setUserData}){
            const user=response.data.data;
             setUserData(user);
             if(user.role=== "Student"){
-                navigate('/HomePage');
+                try{
+const CheckProfile=await axios.get('https://event-managaement-system-backend.onrender.com/api/Student/checkProfileExist',{withCredentials:true});
+if(CheckProfile.data.message==='Account already exist'){
+    navigate('/StudentProfilePage');
+       }
+                }catch(err){
+                    if(err.response?.data?.message=== 'profile not exist'){
+                        navigate('/MakeStudentProfile');
+                    }
+                }
             }else if(user.role=== 'Teacher'){
                 navigate('/TeacherPage');
             }else if(user.role=== 'Admin'){
