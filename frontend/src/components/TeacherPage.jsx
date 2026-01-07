@@ -23,10 +23,12 @@ export default function TeacherPage(){
         <h1>This Is Teacher Page</h1>
         {data.map((all,index)=>(
             <div key={index}>
-                <p>{all.teacherId}</p>
-                <p>{all.subject}</p>
-                <p>{all.department}</p>
-                <p>{all.section}</p>
+                <p>{all?.name}</p>
+                <p>{all?.gmail}</p>
+                <p>{all?.teacherId}</p>
+                <p>{all?.subject}</p>
+                <p>{all?.department}</p>
+                <p>{all?.section}</p>
             </div>
         ))}
         </>
