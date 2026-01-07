@@ -127,8 +127,8 @@ if(response.data.message=== 'user attendence mark successfully'){
             <p key={index}>
                 <strong>{index+1}.</strong> 
                 Date: {new Date(att.date).toLocaleDateString()}, 
-                Subject: {att.subjectName}, 
-                Teacher: {att.subjectTeacher}, 
+                Subject: {att.subject}, 
+                Teacher: {att.teacher}, 
                 Status: <span style={{color: att.attendence==="Present"?"green":"red"}}>{att.attendence}</span>
             </p>
         ))}
