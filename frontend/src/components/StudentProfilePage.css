@@ -1,36 +1,106 @@
-.student-profile {
-  min-height: 89vh;
-  padding: 24px;
-  background-color: #fff6d6; 
+.student-page-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f6fa;
+    padding: 20px;
+    min-height: 100vh;
 }
 
 
-.student-profile h1 {
-  font-size: 22px;
-  margin-bottom: 14px;
-  color: #333;
+.student-page-container .student-profile {
+    max-width: 500px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.student-page-container .student-profile h1 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #2f3640;
+}
+
+.student-page-container .student-profile p {
+    margin: 6px 0;
+    font-size: 1rem;
+    color: #333;
 }
 
 
-.student-profile p {
-  background-color: #fffbea;
-  padding: 10px 14px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  font-size: 15px;
-  color: #444;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  max-width: 150px;
-  font-weight: 800;
+.student-page-container form {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-@media (max-width: 480px) {
-  .student-profile {
-    padding: 16px;
-  }
+.student-page-container form select,
+.student-page-container form button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #dcdde1;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
 
-  .student-profile p {
-    font-size: 14px;
-    padding: 9px 12px;
-  }
+.student-page-container form select:focus {
+    border-color: #4cd137;
+    box-shadow: 0 0 5px rgba(76, 209, 55, 0.5);
+}
+
+.student-page-container form button {
+    background-color: #4cd137;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+.student-page-container form button:hover {
+    background-color: #44bd32;
+}
+
+@media screen and (max-width: 600px) {
+    .student-page-container .student-profile,
+    .student-page-container form {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .student-page-container .student-profile h1 {
+        font-size: 1.5rem;
+    }
+
+    .student-page-container form select,
+    .student-page-container form button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+
+
+
+.student-page-container .attendance-list {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.student-page-container .attendance-list h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #2f3640;
+}
+
+.student-page-container .attendance-list p {
+    margin: 8px 0;
+    font-size: 0.95rem;
 }
