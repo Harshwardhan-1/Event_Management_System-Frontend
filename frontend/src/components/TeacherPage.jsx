@@ -120,11 +120,11 @@ setShowAttendence(response.data.data);
                 </div>
 
                 {showAttendence.map((all,index)=>(
-                    <div key={index}>
+                    <div key={index} className="attendance-card">
                         <strong>{index+1}</strong>
                         <p>Name:{all.name}</p>
                         <p>Date: {new Date(all.date).toLocaleDateString()}, </p> 
-                        <p>Status:{all.attendence}</p>
+                        <p>{all.attendence}</p>
                     </div>
                 ))}
         </>

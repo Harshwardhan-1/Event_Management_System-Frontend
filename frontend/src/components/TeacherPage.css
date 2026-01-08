@@ -1,78 +1,141 @@
 .teacher-page {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 15px;
-    font-family: Arial, sans-serif;
-    color: #333;
+  padding: 20px;
+  background: #f3f4f6;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .teacher-page h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1f2937;
 }
+
 
 
 .teacher-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-bottom: 25px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
 }
 
 .teacher-card p {
-    margin: 8px 0;
+  margin: 6px 0;
+  font-size: 14px;
 }
 
-.teacher-card p span {
-    font-weight: 600;
-    color: #00796b;
+.teacher-card span {
+  font-weight: 600;
 }
 
 .teacher-card button {
-    margin-top: 15px;
-    padding: 10px 18px;
-    background-color: #00796b;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+  margin-top: 14px;
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .teacher-card button:hover {
-    background-color: #26a69a;
+  background: #1e40af;
 }
+
 
 .students-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
 }
 
-
 .student-card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .student-card p {
-    margin: 5px 0;
-    font-size: 0.95rem;
+  margin: 4px 0;
+  font-size: 14px;
+  color: #374151;
 }
 
-.student-card p:first-child {
-    font-weight: 600;
+.student-card button {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.student-card button:nth-of-type(1) {
+  background: #22c55e;
+  color: white;
+}
+.student-card button:nth-of-type(2) {
+  background: #ef4444;
+  color: white;
+}
+.student-card button:nth-of-type(3) {
+  background: #6366f1;
+  color: white;
 }
 
 
-@media (max-width: 480px) {
-    .teacher-page {
-        padding: 10px;
-    }
-    .teacher-card, .student-card {
-        padding: 12px;
-    }
+.attendance-card {
+  background: #ffffff;
+  margin: 14px auto;
+  padding: 16px 18px;
+  max-width: 520px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.attendance-card strong {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: #e5e7eb;
+  padding: 4px 8px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.attendance-card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+
+.attendance-card p:last-child {
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #f3f4f6;
+  width: fit-content;
+}
+
+
+@media (max-width: 600px) {
+  .teacher-page {
+    padding: 10px;
+  }
+
+  .teacher-card,
+  .student-card {
+    padding: 12px;
+  }
+
+  .teacher-page h1 {
+    font-size: 20px;
+  }
 }
