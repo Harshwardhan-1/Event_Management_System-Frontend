@@ -4,6 +4,7 @@ import axios from 'axios';
 import './AdminPage.css';
 export default function AdminPage(){
     const [data,setData]=useState([]);
+    const [search,setSearch]=useState('');
         const fetch=async()=>{
             try{
     const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/all/allUser',{withCredentials:true});
@@ -15,6 +16,12 @@ export default function AdminPage(){
         useEffect(()=>{
         fetch();
         },[])
+
+
+        const filterIt=data.filter((user)=>
+            user.name.toLowerCase().includes(search.toLowerCase())||
+            user.gmail.toLowerCase().includes(search.toLowerCase())
+        );
     const handleDelete=async(gmail)=>{
         const send={gmail};
         try{
@@ -65,7 +72,8 @@ const response=await axios.post("https://event-managaement-system-backend.onrend
         <>
          <div className="admin-page">
         <h1>I am the admin Harshwardhan Yadav</h1>
-        {data.map((all,index)=>(
+        <input type="text" placeholder="Search by name or gmail" className="admin-search" onChange={(e)=>setSearch(e.target.value)} />
+        {filterIt.map((all,index)=>(
             <div  className="admin-card"  key={index}>
                 <p>{all.name}</p>
                 <p>{all.gmail}</p>
@@ -79,6 +87,14 @@ const response=await axios.post("https://event-managaement-system-backend.onrend
             </div>
             ))}
             </div>
+
+            {
+                filterIt.length===0  && (
+                    <p style={{ textAlign: "center", marginTop: "20px" }}>
+                    No user found
+                </p>
+                )
+            }
         </>
     );
 }
