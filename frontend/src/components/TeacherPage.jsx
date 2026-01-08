@@ -52,6 +52,22 @@ export default function TeacherPage(){
     }
 }
     }
+
+    const handleDelete=async(name,gmail,section)=>{
+        const send={name,gmail,section};
+        try{
+const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/TeacherAttendence/markAbsent',send,{withCredentials:true});
+if(response.data.message=== 'attendence mark successfully'){
+    alert('attendence maek successfully');
+}
+        }catch(err){
+            if(err.response?.data?.message=== 'provide full detail'){
+                alert('provide full detail');
+            }else if(err.response?.data?.message=== 'user attendence already has been marked'){
+                alert('attendence for this subject for this student already marked');
+            }
+        }
+    }
     return(
         <>
           <div className="teacher-page">
@@ -76,7 +92,7 @@ export default function TeacherPage(){
                         <p>{all?.section}</p>
                         <p>{all?.semester}</p>
 <button onClick={()=>handlePresent(all?.userId?.name,all?.userId?.gmail,all?.section)}>Present</button>
-                        <button>Absent</button>
+<button onClick={()=>handleDelete(all?.userId?.name,all?.userId.gmail,all?.section)}>Absent</button>
                         <button>Show All Attendence</button>
                     </div>
                 ))}
