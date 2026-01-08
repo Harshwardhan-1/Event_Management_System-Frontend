@@ -5,6 +5,7 @@ import './TeacherPage.css';
 export default function TeacherPage(){
     const [data,setData]=useState([]);
     const [student,setStudent]=useState([]);
+    const [showAttendence,setShowAttendence]=useState([]);
     useEffect(()=>{
         const fetch=async()=>{
             try{
@@ -68,6 +69,24 @@ if(response.data.message=== 'attendence mark successfully'){
             }
         }
     }
+
+
+    const handleAttendence=async(name,gmail)=>{
+        const send={name,gmail};
+        try{
+const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/TeacherAttendence/getAttendence',send,{withCredentials:true});
+if(response.data.message=== 'getStudentAttendence');
+setShowAttendence(response.data.data);
+        }catch(err){
+            if(err.response?.data?.message=== 'provide detail'){
+                alert('provide proper detail');
+            }else if(err.response?.data?.message=== 'no record'){
+                alert('no record found');
+            }else if(err.response?.data?.message=== 'not find student'){
+                alert('no student found');
+            }
+        }
+    }
     return(
         <>
           <div className="teacher-page">
@@ -93,11 +112,20 @@ if(response.data.message=== 'attendence mark successfully'){
                         <p>{all?.semester}</p>
 <button onClick={()=>handlePresent(all?.userId?.name,all?.userId?.gmail,all?.section)}>Present</button>
 <button onClick={()=>handleDelete(all?.userId?.name,all?.userId.gmail,all?.section)}>Absent</button>
-                        <button>Show All Attendence</button>
+<button onClick={()=>handleAttendence(all?.userId?.name,all?.userId.gmail)}>Show All Attendence</button>
                     </div>
                 ))}
                 </div>
                 </div>
+
+                {showAttendence.map((all,index)=>(
+                    <div key={index}>
+                        <strong>{index+1}</strong>
+                        <p>Name:{all.name}</p>
+                        <p>Date: {new Date(all.date).toLocaleDateString()}, </p> 
+                        <p>Status:{all.attendence}</p>
+                    </div>
+                ))}
         </>
     );
 }
