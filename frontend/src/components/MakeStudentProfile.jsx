@@ -26,6 +26,8 @@ if(response.data.message=== 'Student data saved'){
                 alert('Profile already Exist');
             }else if(err.response?.data?.message=== 'Enter valid mobile number'){
                 alert('enter valid mobile number');
+            }else if(err.reponse?.data?.message=== 'rollNo must be atleast of 3 characters'){
+                alert('rollNo must be atleast of 3 charcters');
             }
         }
     }

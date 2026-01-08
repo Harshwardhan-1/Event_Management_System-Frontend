@@ -17,10 +17,14 @@ export default function SignUpPage(){
             navigate("/signIn");
         }
     }catch(err){
-        if(err.response?.data?.message=== "Enter proper detail"){
+            if(err.response?.data?.message=== "Enter proper detail"){
                 alert("Fill your details properly");
             }else if(err.response?.data?.message=== "Something went wrong"){
                 alert("Something went wrong");
+            }else if(err.response?.data?.message=== 'name should be atleast of 3 characters'){
+                alert('name must be of 3 character');
+            }else if(err.response?.data?.message=== 'password must be atleast of 3 character'){
+                alert('password must of atleast 3 character');
             }
     }
 }
