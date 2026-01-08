@@ -6,6 +6,7 @@ export default function TeacherPage(){
     const [data,setData]=useState([]);
     const [student,setStudent]=useState([]);
     const [showAttendence,setShowAttendence]=useState([]);
+    const [search,setSearch]=useState('');
     useEffect(()=>{
         const fetch=async()=>{
             try{
@@ -21,7 +22,12 @@ export default function TeacherPage(){
         };
         fetch();
     },[]);
-    
+
+    const filterStudents=student.filter((user)=>
+    user?.userId?.name.toLowerCase().includes(search.toLowerCase())||
+    user?.userId?.gmail.toLowerCase().includes(search.toLowerCase())||
+    user?.rollNo.toLowerCase().includes(search.toLowerCase())
+    );
 
     const handleStudents=async(department,section)=>{
         const send={department,section};
@@ -101,9 +107,10 @@ setShowAttendence(response.data.data);
                 <p><span>Section:</span>{data?.section}</p>
     <button onClick={()=>handleStudents(data?.department,data?.section)}>Show All Students of this class</button>
                 </div>   
-    
- <div className="students-container">
-                {student.map((all,index)=>(
+
+            <input type="text" placeholder="Seacrch by name or gmail" onChange={(e)=>setSearch(e.target.value)}/>
+            <div className="students-container">
+                {filterStudents.map((all,index)=>(
                     <div className="student-card" key={index}>
                         <p>{all?.userId?.name}</p>
                         <p>{all?.userId?.gmail}</p>
@@ -116,6 +123,11 @@ setShowAttendence(response.data.data);
 <button onClick={()=>handleAttendence(all?.userId?.name,all?.userId.gmail)}>Show All Attendence</button>
                     </div>
                 ))}
+                 {search && filterStudents.length===0&&(
+    <p style={{textAlign:"center",marginTop:"20px",color:"gray"}}>
+      No Student Found
+    </p>
+  )}
                 </div>
                 </div>
                 {showAttendence.map((all,index)=>(
