@@ -58,7 +58,7 @@ export default function TeacherPage(){
         try{
 const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/TeacherAttendence/markAbsent',send,{withCredentials:true});
 if(response.data.message=== 'attendence mark successfully'){
-    alert('attendence maek successfully');
+    alert('attendence mark successfully');
 }
         }catch(err){
             if(err.response?.data?.message=== 'provide full detail'){
