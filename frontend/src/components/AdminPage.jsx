@@ -4,7 +4,6 @@ import axios from 'axios';
 import './AdminPage.css';
 export default function AdminPage(){
     const [data,setData]=useState([]);
-    useEffect(()=>{
         const fetch=async()=>{
             try{
     const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/all/allUser',{withCredentials:true});
@@ -13,8 +12,9 @@ export default function AdminPage(){
                 console.log(err);
             }
         };
+        useEffect(()=>{
         fetch();
-    },[]);
+        },[])
     const handleDelete=async(gmail)=>{
         const send={gmail};
         try{
