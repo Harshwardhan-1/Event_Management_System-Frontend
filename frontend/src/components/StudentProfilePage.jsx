@@ -90,7 +90,7 @@ if(response.data.message=== 'user attendence mark successfully'){
             </select>
             <select onChange={(e)=>setTeacher(e.target.value)}>
                 <option value="Select Teacher">Select Teacher</option>
-                <option value="Divya Tomar">Dr.Divya Tomar Sir</option>
+                <option value="Divya Tomar">Dr.Divya Tomar Mam</option>
                 <option value="Shweta Pandey">Shweta Pandey Mam</option>
                 <option value="Pooja">Pooja Deshpanda Mam</option>
                 <option value="Preent Jain">Preet Jain Sir</option>
@@ -114,7 +114,7 @@ if(response.data.message=== 'user attendence mark successfully'){
 
             <select onChange={(e)=>setSubjectTeacher(e.target.value)}>
                 <option value="Select Teacher">Select Teacher</option>
-                <option value="Divya Tomar">Dr.Divya Tomar Sir</option>
+                <option value="Divya Tomar">Dr.Divya Tomar Mam</option>
                 <option value="Shweta Pandey">Shweta Pandey Mam</option>
                 <option value="Pooja">Pooja Deshpanda Mam</option>
                 <option value="Preent Jain">Preet Jain Sir</option>
